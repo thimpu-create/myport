@@ -1,0 +1,48 @@
+# Node modules
+node_modules/
+
+# Build output
+.next/
+out/
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# VSCode settings
+.vscode/
+
+# Optional npm cache
+.npm/
+
+# Debugging
+coverage/
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Misc
+*.log
+*.tgz
+
+# Ignore next-swc native binaries if still present
+**/next-swc*.node
