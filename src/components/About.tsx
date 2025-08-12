@@ -42,16 +42,15 @@ const About = () => {
                   <span className="text-purple-400 font-semibold"> cutting-edge technology</span>. As a Full Stack Developer 
                   and DevOps enthusiast, I blend creativity with technical expertise to build robust, future-ready applications.
                 </motion.p>
-                
+
                 <motion.p 
                   {...fadeInUp}
                   transition={{ delay: 0.2 }}
                   className="leading-relaxed"
                 >
-                  Currently serving as the <span className="text-blue-400 font-semibold">Chief Technology Officer</span> at
-                  <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent font-bold"> stillmindspace.com</span>,
-                  where I architect innovative solutions and lead a team of talented developers. My focus is on creating 
-                  seamless user experiences while maintaining robust backend systems.
+                  With expertise in architecting innovative solutions and leading development teams, I focus on creating 
+                  seamless user experiences while maintaining highly reliable backend systems. My approach combines strategic 
+                  vision with hands-on technical skills to deliver impactful digital products.
                 </motion.p>
                 
                 <motion.div 
@@ -69,7 +68,7 @@ const About = () => {
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-purple-400"></span>
-                      <span>Cloud Infrastructure (AWS/DO)</span>
+                      <span>Cloud Infrastructure (AWS)</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-blue-400"></span>
@@ -77,7 +76,7 @@ const About = () => {
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-purple-400"></span>
-                      <span>Cross-platform Mobile Apps</span>
+                      <span>REST APIs</span>
                     </li>
                   </ul>
                 </motion.div>

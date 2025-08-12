@@ -37,23 +37,21 @@ const ParticleBackground = () => {
 const Experience = () => {
   const experiences = [
     {
-      title: 'COO & CTO',
-      company: 'stillmindspace.com',
-      period: 'Current',
-      description: 'Leading technology and operations',
-      logo: '/company-logos/stillmindspace.png', // Add your logo
-      skills: ['Leadership', 'Strategy', 'Technology', 'Operations'],
-      achievements: [
-        'Led digital transformation initiatives',
-        'Managed cross-functional teams',
-        'Implemented modern tech stack'
-      ]
-    },
-    {
-      title: 'Full Stack Developer',
-      company: 'Various Projects',
+      title: 'Full Stack Developer & DevOps Engineer',
+      company: 'Adventurecode business LLP',
       period: '3 Years',
-      description: 'Developed full-stack applications including Pinterest clone and more'
+      description: 'Built and deployed scalable applications with strong backend, integration, and DevOps expertise.',
+      achievements: [
+        'Developed full-stack applications like CRM platforms',
+        'Provided backend integrations and permanent hosting solutions',
+        'Managed hosting environments and optimized server performance',
+        'Implemented Git version control and CI/CD pipelines',
+        'Resolved complex hosting and deployment issues efficiently'
+      ],
+      skills: [
+        'Python', 'Django', 'Fastapi','MySQL',
+        'Git', 'Docker', 'CI/CD', 'Nginx'
+      ]
     },
     {
       title: 'Programmer Analyst and Intern',

@@ -40,9 +40,9 @@ const Hero = () => {
             <h2 className="text-4xl font-light text-blue-400/90">
               Full Stack Developer & DevOps Engineer
             </h2>
-            <p className="text-xl text-gray-400">
+            {/* <p className="text-xl text-gray-400">
               COO & CTO at <span className="text-blue-400">stillmindspace.com</span>
-            </p>
+            </p> */}
           </motion.div>
         </div>
 

@@ -10,9 +10,9 @@ const Skills = () => {
       // You can specify either emoji or imgSrc
       icon: '🐍', // can be replaced with imgSrc
       imgSrc: '/skills/python.png', // example path
-      experience: '3+ years',
+      // experience: '3+ years',
       proficiency: 90,
-      projects: 15,
+      // projects: 15,
       details: [
         'Django & FastAPI Development',
         'Data Analysis & Automation',
@@ -24,9 +24,9 @@ const Skills = () => {
       category: 'Framework',
       icon: '⚡',
       imgSrc: '/skills/fastapi.png', // example path
-      experience: '2+ years',
+      // experience: '2+ years',
       proficiency: 85,
-      projects: 8,
+      // projects: 8,
       details: [
         'High-performance REST APIs',
         'WebSocket Integration',
@@ -38,9 +38,9 @@ const Skills = () => {
       category: 'Framework',
       icon: '🎯',
       imgSrc: '/skills/django.png', // example path
-      experience: '3+ years',
+      // experience: '3+ years',
       proficiency: 88,
-      projects: 12,
+      // projects: 12,
       details: [
         'Full-stack Web Development',
         'REST Framework APIs',
@@ -52,9 +52,9 @@ const Skills = () => {
       category: 'DevOps',
       icon: '🐋',
       imgSrc: '/skills/docker.png', // example path
-      experience: '2+ years',
+      // experience: '2+ years',
       proficiency: 82,
-      projects: 10,
+      // projects: 10,
       details: [
         'Multi-container Applications',
         'Docker Compose',
@@ -66,9 +66,9 @@ const Skills = () => {
       category: 'DevOps',
       icon: '🔄',
       imgSrc: '/skills/cidi.png', // example path
-      experience: '2+ years',
+      // experience: '2+ years',
       proficiency: 80,
-      projects: 7,
+      // projects: 7,
       details: [
         'GitHub Actions',
         'Jenkins Pipelines',
@@ -94,9 +94,9 @@ const Skills = () => {
       category: 'Server',
       icon: '🐧',
       imgSrc: '/skills/linux.png', // example path
-      experience: '3+ years',
+      // experience: '3+ years',
       proficiency: 85,
-      projects: 20,
+      // projects: 20,
       details: [
         'Server Administration',
         'Shell Scripting',
@@ -108,9 +108,9 @@ const Skills = () => {
       category: 'Server',
       icon: '🌐',
       imgSrc: '/skills/nginx.png', // example path
-      experience: '2+ years',
+      // experience: '2+ years',
       proficiency: 80,
-      projects: 15,
+      // projects: 15,
       details: [
         'Load Balancing',
         'Reverse Proxy',
@@ -136,9 +136,9 @@ const Skills = () => {
       category: 'Mobile',
       icon: '📱',
       imgSrc: '/skills/flutter.png', // example path
-      experience: '1+ years',
+      // experience: '1+ years',
       proficiency: 75,
-      projects: 4,
+      // projects: 4,
       details: [
         'Cross-platform Development',
         'State Management',
@@ -150,9 +150,9 @@ const Skills = () => {
       category: 'Backend',
       icon: '🌐',
       imgSrc: '/skills/rest.png', // example path
-      experience: '3+ years',
+      // experience: '3+ years',
       proficiency: 92,
-      projects: 25,
+      // projects: 25,
       details: [
         'API Design & Architecture',
         'Authentication & Security',
