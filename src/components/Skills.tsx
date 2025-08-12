@@ -2,8 +2,19 @@ import { motion } from 'framer-motion';
 import Masonry from 'react-masonry-css';
 import Image from 'next/image';
 
+type Skill = {
+  name: string;
+  category: string;
+  icon: string;
+  imgSrc: string;
+  proficiency: number;
+  details: string[];
+  experience?: string;
+  projects?: number;
+};
+
 const Skills = () => {
-  const skills = [
+  const skills: Skill[] = [
     { 
       name: 'Python',
       category: 'Language',

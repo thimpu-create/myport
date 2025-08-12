@@ -35,7 +35,17 @@ const ParticleBackground = () => {
 };
 
 const Experience = () => {
-  const experiences = [
+  type ExperienceType = {
+    title: string;
+    company: string;
+    period: string;
+    description: string;
+    achievements?: string[];
+    skills?: string[];
+    logo?: string;
+  };
+
+  const experiences: ExperienceType[] = [
     {
       title: 'Full Stack Developer & DevOps Engineer',
       company: 'Adventurecode business LLP',
@@ -51,13 +61,15 @@ const Experience = () => {
       skills: [
         'Python', 'Django', 'Fastapi','MySQL',
         'Git', 'Docker', 'CI/CD', 'Nginx'
-      ]
+      ],
+      // logo: 'path/to/logo.png', // Add a logo path if needed
     },
     {
       title: 'Programmer Analyst and Intern',
       company: 'Techvariable Pvt. Ltd.',
       period: '1 Years',
       description: 'Provided technical solutions and support in varous projects as a part of the team',
+      // logo: 'path/to/logo.png', // Add a logo path if needed
     }
   ];
 
