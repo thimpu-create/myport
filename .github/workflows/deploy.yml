@@ -30,7 +30,7 @@ jobs:
           aws-region: eu-north-1
 
       - name: Upload to S3
-        run: aws s3 sync ./out s3://portfolio-thimpu --delete
+        run: aws s3 sync ./out s3://thimpu.work.gd --delete
 
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v1.0.3
