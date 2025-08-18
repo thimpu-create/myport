@@ -23,15 +23,27 @@ const Contact = () => {
     setSubmitStatus('idle');
 
     try {
-      // Add your form submission logic here
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
+        const response = await fetch(
+          "https://sga3jtfqs2p4qqhld46vmrwcaq0bdvsi.lambda-url.us-east-1.on.aws/",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+          }
+        );
+
+        if (response.ok) {
+          setSubmitStatus("success");
+          setFormData({ name: "", email: "", message: "" });
+        } else {
+          setSubmitStatus("error");
+        }
+      } catch (error) {
+        console.error("Form submission error:", error);
+        setSubmitStatus("error");
+      } finally {
+        setIsSubmitting(false);
+      }
   };
 
   return (
