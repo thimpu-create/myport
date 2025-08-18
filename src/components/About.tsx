@@ -40,7 +40,7 @@ const About = () => {
                 <motion.p {...fadeInUp} className="leading-relaxed">
                   Transforming ideas into <span className="text-blue-400 font-semibold">scalable solutions</span> with 
                   <span className="text-purple-400 font-semibold"> cutting-edge technology</span>. As a Full Stack Developer 
-                  and DevOps enthusiast, I blend creativity with technical expertise to build robust, future-ready applications.
+                  and DevOps Engineering enthusiast, I blend creativity with technical expertise to build robust, future-ready applications.
                 </motion.p>
 
                 <motion.p 
