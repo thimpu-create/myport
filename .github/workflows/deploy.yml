@@ -40,4 +40,9 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script: |
-            /var/www/update-portfolio.sh
+            echo "===== START DEPLOY DEBUG ====="
+            which aws || echo "AWS CLI not found"
+            aws --version || echo "AWS CLI command failed"
+            ls -l /var/www/update-portfolio.sh || echo "Script missing"
+            bash -x /var/www/update-portfolio.sh
+            echo "===== END DEPLOY DEBUG ====="
