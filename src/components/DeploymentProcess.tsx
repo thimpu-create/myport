@@ -24,7 +24,7 @@ const DeploymentProcess = () => {
         >
         <div className="text-center mb-12">
             <h2 className="text-4xl font-bold flex items-center justify-center gap-3">
-            <Workflow className="w-8 h-8 text-blue-400" />
+            {/* <Workflow className="w-8 h-8 text-blue-400" /> */}
             My Deployment Process
             </h2>
             <p className="text-gray-400 mt-2">
