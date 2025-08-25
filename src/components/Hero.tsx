@@ -45,13 +45,27 @@ const Hero = () => {
             </p> */}
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2 }}
-              className="inline-block px-6 py-3 rounded-xl border border-blue-500/40 bg-white/5 backdrop-blur-md text-sm text-blue-300 shadow-lg shadow-blue-500/10"
-            >
-              🚀 Auto-Deployed via <span className="text-blue-400 font-semibold">GitHub Actions</span> → <span className="text-yellow-300 font-semibold">AWS EC2</span> + <span className="text-green-300 font-semibold">S3</span> + <span className="text-purple-300 font-semibold">CloudFront</span>
-            </motion.div>
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2 }}
+                className="inline-block px-6 py-3 rounded-xl border border-blue-500/40 bg-white/5 backdrop-blur-md text-sm text-blue-300 shadow-lg shadow-blue-500/10"
+              >
+                🚀 Auto-Deployed via{" "}
+                <span className="text-blue-400 font-semibold">GitHub Actions</span> →{" "}
+                <span className="text-yellow-300 font-semibold">AWS EC2</span> +{" "}
+                <span className="text-green-300 font-semibold">S3</span> +{" "}
+                <span className="text-purple-300 font-semibold">CloudFront</span>
+
+                {/* 👇 See More link */}
+                <div className="mt-2 text-center">
+                  <a
+                    href="#deployment-process"
+                    className="inline-block text-xs text-blue-400 hover:text-blue-300 underline underline-offset-4 transition-colors"
+                  >
+                    See More →
+                  </a>
+                </div>
+              </motion.div>
           </motion.div>
         </div>
 
