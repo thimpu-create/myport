@@ -86,20 +86,20 @@ const Skills = () => {
         'Automated Testing'
       ]
     },
-    // {
-    //   name: 'AWS',
-    //   category: 'Cloud',
-    //   icon: '☁️',
-    //   imgSrc: '/skills/aws.png', // example path
-    //   experience: '2+ years',
-    //   proficiency: 78,
-    //   projects: 6,
-    //   details: [
-    //     'EC2 & S3 Management',
-    //     'Lambda Functions',
-    //     'RDS Configuration'
-    //   ]
-    // },
+    {
+      name: 'AWS',
+      category: 'Cloud',
+      icon: '☁️',
+      imgSrc: '/skills/aws.png', // example path
+      experience: '2+ years',
+      proficiency: 78,
+      projects: 6,
+      details: [
+        'EC2 & S3 Management',
+        'Lambda Functions',
+        'RDS Configuration'
+      ]
+    },
     {
       name: 'Linux',
       category: 'Server',
