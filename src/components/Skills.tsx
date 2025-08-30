@@ -91,9 +91,9 @@ const Skills = () => {
       category: 'Cloud',
       icon: '☁️',
       imgSrc: '/skills/aws.png', // example path
-      experience: '2+ years',
+      // experience: '2+ years',
       proficiency: 78,
-      projects: 6,
+      // projects: 6,
       details: [
         'EC2 & S3 Management',
         'Lambda Functions',
