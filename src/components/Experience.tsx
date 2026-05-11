@@ -1,189 +1,146 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { HiOutlineBriefcase, HiSparkles } from 'react-icons/hi';
-import { FaRocket } from 'react-icons/fa';
-import { useEffect, useState } from 'react';
-
-const ParticleBackground = () => {
-  const [dimensions, setDimensions] = useState({ width: 0, height: 800 });
-
-  useEffect(() => {
-    setDimensions({
-      width: window.innerWidth,
-      height: window.innerHeight
-    });
-  }, []);
-
-  return (
-    <div className="absolute inset-0 overflow-hidden">
-      {[...Array(20)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-2 h-2 bg-blue-400/20 rounded-full"
-          animate={{
-            y: [-20, dimensions.height],
-            x: Math.random() * dimensions.width,
-          }}
-          transition={{
-            duration: Math.random() * 10 + 10,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-      ))}
-    </div>
-  );
-};
+import { motion } from 'framer-motion';
 
 const Experience = () => {
-  type ExperienceType = {
-    title: string;
-    company: string;
-    period: string;
-    description: string;
-    achievements?: string[];
-    skills?: string[];
-    logo?: string;
-  };
-
-  const experiences: ExperienceType[] = [
+  const experiences = [
     {
-      title: 'Full Stack Developer & DevOps Engineer',
-      company: 'Adventurecode business LLP',
-      period: '3 Years',
-      description: 'Built and deployed scalable applications with strong backend, integration, and DevOps expertise.',
+      title: 'Software Engineer & Technical Officer',
+      company: 'Jal Jeevan Mission (JJM), Assam',
+      period: 'Current',
+      type: 'Government Initiative',
+      description: 'Serving as Technical Officer under the flagship Jal Jeevan Mission, supporting digital infrastructure and technical operations across Assam.',
       achievements: [
-        'Developed full-stack applications like CRM platforms',
-        'Provided backend integrations and permanent hosting solutions',
-        'Managed hosting environments and optimized server performance',
-        'Implemented Git version control and CI/CD pipelines',
-        'Resolved complex hosting and deployment issues efficiently'
+        'Managing technical systems and digital workflows for the mission',
+        'Providing software engineering expertise to support mission objectives',
+        'Coordinating with government teams on infrastructure and data systems',
       ],
-      skills: [
-        'Python', 'Django', 'Fastapi','MySQL',
-        'Git', 'Docker', 'CI/CD', 'Nginx'
-      ],
-      // logo: 'path/to/logo.png', // Add a logo path if needed
+      skills: ['Technical Operations', 'Government Systems', 'Infrastructure'],
+      current: true,
     },
     {
-      title: 'Programmer Analyst and Intern',
+      title: 'Full Stack Developer & DevOps Engineer',
+      company: 'Adventurecode Business LLP',
+      period: '3 Years',
+      type: 'Full-time',
+      description: 'Built and deployed scalable applications with strong backend, cloud integration, and DevOps expertise.',
+      achievements: [
+        'Developed full-stack applications including CRM platforms',
+        'Architected backend integrations and permanent hosting solutions',
+        'Managed hosting environments and optimized server performance',
+        'Implemented Git version control and CI/CD pipelines',
+        'Resolved complex hosting and deployment issues efficiently',
+      ],
+      skills: ['Python', 'Django', 'FastAPI', 'MySQL', 'Git', 'Docker', 'CI/CD', 'Nginx'],
+      current: false,
+    },
+    {
+      title: 'Programmer Analyst & Intern',
       company: 'Techvariable Pvt. Ltd.',
-      period: '1 Years',
-      description: 'Provided technical solutions and support in varous projects as a part of the team',
-      // logo: 'path/to/logo.png', // Add a logo path if needed
-    }
+      period: '1 Year',
+      type: 'Internship → Full-time',
+      description: 'Provided technical solutions and team support across various client projects.',
+      achievements: [
+        'Worked on diverse client projects as a team contributor',
+        'Gained hands-on experience with enterprise-level workflows',
+      ],
+      skills: ['Python', 'Web Development', 'Team Collaboration'],
+      current: false,
+    },
   ];
 
   return (
-    <section id="experience" className="py-20 px-4 bg-gradient-to-b from-gray-900 to-gray-800 relative overflow-hidden">
-      <ParticleBackground />
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        className="max-w-6xl mx-auto relative z-10"
-      >
-        <motion.h2 
-          className="text-5xl font-bold mb-16 text-center"
-          initial={{ scale: 0.5 }}
-          whileInView={{ scale: 1 }}
-          transition={{ type: "spring", bounce: 0.5 }}
+    <section id="experience" className="py-28 px-4 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-950/5 to-transparent pointer-events-none" />
+
+      <div className="max-w-4xl mx-auto relative z-10">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-20 text-center"
         >
-          <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text">
-            My Adventure So Far <FaRocket className="inline-block ml-2 animate-bounce" />
-          </span>
-        </motion.h2>
-        
+          <p className="text-blue-400 text-sm font-medium tracking-widest uppercase mb-3">Career</p>
+          <h2 className="text-5xl font-bold text-white">Experience</h2>
+          <div className="mt-4 h-px w-16 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto" />
+        </motion.div>
+
+        {/* Timeline */}
         <div className="relative">
-          {/* Animated timeline line */}
-          <motion.div 
-            className="absolute left-0 md:left-1/2 transform -translate-x-px h-full w-1"
-            style={{
-              background: "linear-gradient(180deg, #60A5FA 0%, #8B5CF6 50%, #EC4899 100%)",
-            }}
-            initial={{ height: 0 }}
-            whileInView={{ height: "100%" }}
-            transition={{ duration: 1.5 }}
-          />
+          {/* Vertical line */}
+          <div className="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/50 via-indigo-500/30 to-transparent" />
 
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.3 }}
-              className={`relative flex items-center ${
-                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-              } mb-16`}
-            >
-              {/* Animated timeline dot */}
-              <motion.div 
-                className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-blue-400 flex items-center justify-center"
-                whileHover={{ scale: 1.5, rotate: 180 }}
-              >
-                <HiSparkles className="text-white text-sm" />
-              </motion.div>
-
-              {/* Experience card with 3D effect */}
+          <div className="space-y-10 pl-8 md:pl-24">
+            {experiences.map((exp, i) => (
               <motion.div
-                whileHover={{ 
-                  scale: 1.02,
-                  rotateX: 5,
-                  rotateY: index % 2 === 0 ? 5 : -5,
-                }}
-                className="w-full md:w-5/12 bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-gray-700/50 transform perspective-1000"
-                style={{
-                  transformStyle: "preserve-3d",
-                }}
+                key={i}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15 }}
+                className="relative"
               >
-                <div className="flex items-center gap-4 mb-4">
-                  {exp.logo && (
-                    <img src={exp.logo} alt={exp.company} className="w-12 h-12 rounded-full" />
+                {/* Timeline dot */}
+                <div className={`absolute -left-8 md:-left-24 top-6 w-4 h-4 rounded-full border-2 flex items-center justify-center
+                  ${exp.current ? 'border-blue-400 bg-blue-400/20' : 'border-gray-600 bg-gray-800'}`}>
+                  {exp.current && (
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
                   )}
-                  <div>
-                    <h3 className="text-2xl font-bold text-white">{exp.title}</h3>
-                    <p className="text-blue-400">{exp.company}</p>
-                  </div>
                 </div>
-                
-                <p className="text-gray-400 mb-4 flex items-center gap-2">
-                  <HiOutlineBriefcase className="text-blue-400" />
-                  {exp.period}
-                </p>
-                
-                <p className="mb-4 text-gray-300">{exp.description}</p>
-                
-                {exp.achievements && (
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-gray-400 mb-2">KEY ACHIEVEMENTS</h4>
-                    <ul className="list-disc list-inside space-y-1 text-gray-300">
-                      {exp.achievements.map((achievement, i) => (
-                        <li key={i}>{achievement}</li>
+
+                {/* Card */}
+                <div className={`p-7 rounded-2xl border transition-all duration-300
+                  ${exp.current
+                    ? 'bg-blue-950/20 border-blue-500/20 hover:border-blue-500/40'
+                    : 'bg-white/[0.025] border-white/[0.06] hover:border-white/15'
+                  }`}>
+                  {/* Top row */}
+                  <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
+                    <div>
+                      <div className="flex items-center gap-3 mb-1 flex-wrap">
+                        <h3 className="text-white font-semibold text-xl">{exp.title}</h3>
+                        {exp.current && (
+                          <span className="text-xs px-2.5 py-0.5 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">
+                            Current
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-blue-400 font-medium">{exp.company}</p>
+                    </div>
+                    <div className="text-right flex-shrink-0">
+                      <span className="text-sm text-gray-400">{exp.period}</span>
+                      <br />
+                      <span className="text-xs text-gray-600">{exp.type}</span>
+                    </div>
+                  </div>
+
+                  <p className="text-gray-400 text-sm leading-relaxed mb-5">{exp.description}</p>
+
+                  {/* Achievements */}
+                  {exp.achievements.length > 0 && (
+                    <ul className="space-y-2 mb-5">
+                      {exp.achievements.map((a, j) => (
+                        <li key={j} className="flex items-start gap-2.5 text-sm text-gray-400">
+                          <span className="mt-1.5 w-1 h-1 rounded-full bg-blue-400/60 flex-shrink-0" />
+                          {a}
+                        </li>
                       ))}
                     </ul>
-                  </div>
-                )}
-                
-                {exp.skills && (
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {exp.skills.map((skill, i) => (
-                      <motion.span
-                        key={i}
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ delay: i * 0.1 }}
-                        whileHover={{ scale: 1.1 }}
-                        className="px-3 py-1 text-sm rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-400 border border-blue-500/20"
-                      >
-                        {skill}
-                      </motion.span>
+                  )}
+
+                  {/* Skill tags */}
+                  <div className="flex flex-wrap gap-2">
+                    {exp.skills.map((s, j) => (
+                      <span key={j} className="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400 border border-white/[0.06]">
+                        {s}
+                      </span>
                     ))}
                   </div>
-                )}
+                </div>
               </motion.div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
