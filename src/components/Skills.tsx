@@ -26,10 +26,11 @@ const pipeline: Stage[] = [
     tools: [
       { name: 'Python', note: 'Primary' },
       { name: 'TypeScript' },
-      { name: 'Django', note: 'Backend' },
+      { name: 'Django', note: 'Full-stack' },
       { name: 'FastAPI', note: 'APIs' },
       { name: 'Next.js' },
       { name: 'Flutter' },
+      { name: 'Laravel', note: 'PHP Framework' },
     ],
   },
   {
