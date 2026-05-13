@@ -8,6 +8,7 @@ import Projects from '@/components/Projects';
 import DeploymentProcess from '@/components/DeploymentProcess';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import TerminalEasterEgg from '@/components/TerminalEasterEgg';
 
 export default function Home() {
   return (
@@ -24,12 +25,12 @@ export default function Home() {
         <meta property="og:title" content="Thimpu Sengyung — Software Engineer & DevOps" />
         <meta property="og:description" content="Building scalable systems, cloud infrastructure, and AI-powered products." />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/og-image.jpg" />
+        <meta property="og:image" content="/og-image.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Thimpu Sengyung — Software Engineer & DevOps" />
         <meta name="twitter:description" content="Building scalable systems, cloud infrastructure, and AI-powered products." />
-        <meta name="twitter:image" content="/og-image.jpg" />
+        <meta name="twitter:image" content="/og-image.png" />
 
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -62,6 +63,7 @@ export default function Home() {
         <Experience />
         <DeploymentProcess />
         <Contact />
+        <TerminalEasterEgg />
       </main>
 
       <Footer />

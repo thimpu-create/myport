@@ -2,12 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── CSS Variables ─────────────────────────────────── */
 :root {
   --foreground-rgb: 255, 255, 255;
   --background: #030712;
   --accent: #3b82f6;
 }
 
+/* ─── Light Mode Variables ──────────────────────────── */
+html.light-mode {
+  --foreground-rgb: 15, 23, 42;
+  --background: #f8fafc;
+}
+
+/* ─── Base ──────────────────────────────────────────── */
 * {
   box-sizing: border-box;
 }
@@ -23,9 +31,22 @@ body {
   font-feature-settings: "rlig" 1, "calt" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Subtle grid pattern */
+/* ─── Gradient Background ───────────────────────────── */
+.gradient-bg {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(99, 102, 241, 0.04) 0%, transparent 50%);
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+
+/* ─── Grid Pattern ──────────────────────────────────── */
 .bg-grid-pattern {
   background-size: 40px 40px;
   background-image:
@@ -33,38 +54,62 @@ body {
     linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
 }
 
+/* ─── Glass Card ────────────────────────────────────── */
 .glass-card {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(12px);
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 5px;
-}
-::-webkit-scrollbar-track {
-  background: #030712;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(59, 130, 246, 0.3);
-  border-radius: 100px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(59, 130, 246, 0.5);
-}
+/* ─── Scrollbar ─────────────────────────────────────── */
+::-webkit-scrollbar        { width: 5px; }
+::-webkit-scrollbar-track  { background: #030712; }
+::-webkit-scrollbar-thumb  { background: rgba(59, 130, 246, 0.3); border-radius: 100px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(59, 130, 246, 0.5); }
 
-/* Selection */
+/* ─── Selection ─────────────────────────────────────── */
 ::selection {
   background: rgba(59, 130, 246, 0.25);
   color: #fff;
 }
 
-.gradient-bg {
-  background: radial-gradient(ellipse at 20% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 60%),
-              radial-gradient(ellipse at 80% 20%, rgba(99, 102, 241, 0.04) 0%, transparent 50%);
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
+/* ─── Light Mode Overrides ──────────────────────────── */
+html.light-mode body {
+  background-color: #f8fafc;
+  color: #0f172a;
 }
+
+html.light-mode .gradient-bg {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(99, 102, 241, 0.06) 0%, transparent 50%);
+}
+
+html.light-mode header {
+  background-color: rgba(248, 250, 252, 0.85) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Text */
+html.light-mode .text-white    { color: #0f172a !important; }
+html.light-mode .text-gray-300 { color: #334155 !important; }
+html.light-mode .text-gray-400 { color: #475569 !important; }
+html.light-mode .text-gray-500 { color: #64748b !important; }
+html.light-mode .text-gray-600 { color: #475569 !important; }
+
+/* Backgrounds */
+html.light-mode .bg-\[\#030712\]       { background-color: #f8fafc !important; }
+html.light-mode .bg-gray-900           { background-color: #f1f5f9 !important; }
+html.light-mode .bg-gray-800           { background-color: #e2e8f0 !important; }
+html.light-mode .bg-white\/\[0\.025\]  { background-color: rgba(255,255,255,0.8) !important; }
+html.light-mode .bg-white\/\[0\.02\]   { background-color: rgba(255,255,255,0.7) !important; }
+html.light-mode .bg-white\/\[0\.03\]   { background-color: rgba(255,255,255,0.9) !important; }
+
+/* Borders */
+html.light-mode .border-white\/\[0\.06\] { border-color: rgba(0,0,0,0.08) !important; }
+html.light-mode .border-white\/\[0\.05\] { border-color: rgba(0,0,0,0.06) !important; }
+html.light-mode .border-white\/10        { border-color: rgba(0,0,0,0.1)  !important; }
+
+/* Scrollbar */
+html.light-mode ::-webkit-scrollbar-track { background: #f1f5f9; }
+html.light-mode ::-webkit-scrollbar-thumb { background: rgba(59, 130, 246, 0.4); }

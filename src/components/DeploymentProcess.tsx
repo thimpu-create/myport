@@ -116,7 +116,7 @@ const DeploymentProcess = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-4"
+          className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"
         >
           {/* CI Badge */}
           <div className="p-5 rounded-2xl bg-white/[0.025] border border-white/[0.06] flex flex-col gap-3">
@@ -127,6 +127,23 @@ const DeploymentProcess = () => {
               className="h-7 object-left"
             />
             <p className="text-xs text-gray-600">Live from GitHub Actions</p>
+          </div>
+
+          {/* Uptime badge */}
+          <div className="p-5 rounded-2xl bg-white/[0.025] border border-white/[0.06] flex flex-col gap-3">
+            <p className="text-xs text-gray-500 uppercase tracking-widest">Uptime</p>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse flex-shrink-0" />
+              <span className="text-2xl font-bold text-green-400">99.9%</span>
+            </div>
+            <a
+              href="https://stats.uptimerobot.com/ZIG0RMrE70"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-gray-600 hover:text-blue-400 transition-colors"
+            >
+              Monitored by UptimeRobot ↗
+            </a>
           </div>
 
           {/* Security score */}
