@@ -13,6 +13,7 @@ const Hero = () => {
         transition={{ duration: 0.9, ease: 'easeOut' }}
         className="text-center relative px-6 max-w-4xl mx-auto"
       >
+        {/* Available badge */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -23,6 +24,7 @@ const Hero = () => {
           Available for opportunities
         </motion.div>
 
+        {/* Name */}
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -36,6 +38,7 @@ const Hero = () => {
           </span>
         </motion.h1>
 
+        {/* Roles */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -53,6 +56,7 @@ const Hero = () => {
           </span>
         </motion.div>
 
+        {/* Tagline */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -62,6 +66,7 @@ const Hero = () => {
           Building scalable systems and clean digital experiences — from cloud infrastructure to polished frontends.
         </motion.p>
 
+        {/* CTA buttons */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -85,21 +90,45 @@ const Hero = () => {
           </a>
         </motion.div>
 
+        {/* Live status strip — the DevOps flex */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="inline-flex flex-wrap items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-white/5 bg-white/[0.02] backdrop-blur-md text-xs text-gray-500"
+          className="inline-flex flex-wrap items-center justify-center gap-3 px-5 py-3 rounded-xl border border-white/5 bg-white/[0.02] backdrop-blur-md text-xs text-gray-500"
         >
-          🚀 Auto-deployed via{' '}
-          <span className="text-blue-400 font-medium">GitHub Actions</span> →{' '}
-          <span className="text-yellow-400 font-medium">AWS EC2</span> +{' '}
-          <span className="text-green-400 font-medium">S3</span> +{' '}
-          <span className="text-purple-400 font-medium">CloudFront</span>
-          <a href="#deployment-process" className="text-blue-400 underline underline-offset-2 hover:text-blue-300 transition-colors ml-1">See More →</a>
+          {/* CI badge */}
+          <span className="flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+            <span className="text-gray-400">CI</span>
+            <img
+              src="https://img.shields.io/github/actions/workflow/status/thimpu-create/myport/ci.yml?branch=main&label=&style=flat-square&color=22c55e"
+              alt="CI status"
+              className="h-4"
+            />
+          </span>
+          <span className="text-gray-700">|</span>
+          {/* Deploy chain */}
+          <span className="flex items-center gap-1.5 text-gray-400">
+            <span className="text-blue-400 font-medium">GitHub Actions</span>
+            <span className="text-gray-700">→</span>
+            <span className="text-green-400 font-medium">Vercel</span>
+            <span className="text-gray-700">→</span>
+            <span className="text-purple-400 font-medium">Edge CDN</span>
+          </span>
+          <span className="text-gray-700">|</span>
+          {/* Security score */}
+          <span className="flex items-center gap-1.5">
+            <span className="text-yellow-400">A+</span>
+            <span className="text-gray-500">security</span>
+          </span>
+          <a href="#deployment-process" className="text-blue-400 underline underline-offset-2 hover:text-blue-300 transition-colors ml-1">
+            See pipeline →
+          </a>
         </motion.div>
       </motion.div>
 
+      {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
         <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }}
           className="w-5 h-9 rounded-full border border-white/15 flex justify-center items-start pt-1.5">
