@@ -1,144 +1,184 @@
 import { motion } from 'framer-motion';
 
+const experiences = [
+  {
+    index: 'Nº 01',
+    title: 'Software Engineer & Technical Officer',
+    company: 'Jal Jeevan Mission (JJM), Assam',
+    period: 'Current',
+    type: 'Government Initiative',
+    description:
+      'Serving as Technical Officer under the flagship Jal Jeevan Mission, supporting digital infrastructure and technical operations across Assam.',
+    achievements: [
+      'Managing technical systems and digital workflows for the mission',
+      'Providing software engineering expertise to support mission objectives',
+      'Coordinating with government teams on infrastructure and data systems',
+    ],
+    skills: ['Technical Operations', 'Government Systems', 'Infrastructure'],
+    current: true,
+  },
+  {
+    index: 'Nº 02',
+    title: 'Full Stack Developer & DevOps Engineer',
+    company: 'Adventurecode Business LLP',
+    period: '3 Years',
+    type: 'Full-time',
+    description:
+      'Built and deployed scalable applications with strong backend, cloud integration, and DevOps expertise.',
+    achievements: [
+      'Developed full-stack applications including CRM platforms',
+      'Architected backend integrations and permanent hosting solutions',
+      'Managed hosting environments and optimized server performance',
+      'Implemented Git version control and CI/CD pipelines',
+      'Resolved complex hosting and deployment issues efficiently',
+    ],
+    skills: ['Python', 'Django', 'FastAPI', 'MySQL', 'Git', 'Docker', 'CI/CD', 'Nginx'],
+    current: false,
+  },
+  {
+    index: 'Nº 03',
+    title: 'Programmer Analyst & Intern',
+    company: 'Techvariable Pvt. Ltd.',
+    period: '1 Year',
+    type: 'Internship → Full-time',
+    description:
+      'Provided technical solutions and team support across various client projects.',
+    achievements: [
+      'Worked on diverse client projects as a team contributor',
+      'Gained hands-on experience with enterprise-level workflows',
+    ],
+    skills: ['Python', 'Web Development', 'Team Collaboration'],
+    current: false,
+  },
+];
+
 const Experience = () => {
-  const experiences = [
-    {
-      title: 'Software Engineer & Technical Officer',
-      company: 'Jal Jeevan Mission (JJM), Assam',
-      period: 'Current',
-      type: 'Government Initiative',
-      description: 'Serving as Technical Officer under the flagship Jal Jeevan Mission, supporting digital infrastructure and technical operations across Assam.',
-      achievements: [
-        'Managing technical systems and digital workflows for the mission',
-        'Providing software engineering expertise to support mission objectives',
-        'Coordinating with government teams on infrastructure and data systems',
-      ],
-      skills: ['Technical Operations', 'Government Systems', 'Infrastructure'],
-      current: true,
-    },
-    {
-      title: 'Full Stack Developer & DevOps Engineer',
-      company: 'Adventurecode Business LLP',
-      period: '3 Years',
-      type: 'Full-time',
-      description: 'Built and deployed scalable applications with strong backend, cloud integration, and DevOps expertise.',
-      achievements: [
-        'Developed full-stack applications including CRM platforms',
-        'Architected backend integrations and permanent hosting solutions',
-        'Managed hosting environments and optimized server performance',
-        'Implemented Git version control and CI/CD pipelines',
-        'Resolved complex hosting and deployment issues efficiently',
-      ],
-      skills: ['Python', 'Django', 'FastAPI', 'MySQL', 'Git', 'Docker', 'CI/CD', 'Nginx'],
-      current: false,
-    },
-    {
-      title: 'Programmer Analyst & Intern',
-      company: 'Techvariable Pvt. Ltd.',
-      period: '1 Year',
-      type: 'Internship → Full-time',
-      description: 'Provided technical solutions and team support across various client projects.',
-      achievements: [
-        'Worked on diverse client projects as a team contributor',
-        'Gained hands-on experience with enterprise-level workflows',
-      ],
-      skills: ['Python', 'Web Development', 'Team Collaboration'],
-      current: false,
-    },
-  ];
-
   return (
-    <section id="experience" className="py-28 px-4 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-950/5 to-transparent pointer-events-none" />
+    <section id="experience" className="py-24 px-6 md:px-12 relative bg-[#030712]">
 
-      <div className="max-w-4xl mx-auto relative z-10">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+      {/* ── Section masthead ── */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="max-w-7xl mx-auto mb-12"
+      >
+        <div className="flex items-center justify-between border-t border-b border-white/[0.06] py-4">
+          <div className="flex items-center gap-6">
+            <span className="font-mono text-[9px] tracking-[0.3em] uppercase text-gray-700">V.</span>
+            <span
+              className="text-white tracking-tight"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '1.1rem', fontStyle: 'italic' }}
+            >
+              Career · Field Notes
+            </span>
+          </div>
+          <div className="flex items-center gap-8 font-mono text-[9px] tracking-widest uppercase text-gray-700">
+            <span>3 roles · 4+ years</span>
+            <span>005 / 007</span>
+          </div>
+        </div>
+      </motion.div>
+
+      <div className="max-w-7xl mx-auto">
+
+        {/* ── Headline ── */}
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-20 text-center"
+          className="text-white mb-12"
+          style={{
+            fontFamily: "'Playfair Display', Georgia, serif",
+            fontSize: 'clamp(1.8rem, 4vw, 3rem)',
+            letterSpacing: '-0.02em',
+            lineHeight: '1.1',
+          }}
         >
-          <p className="text-blue-400 text-sm font-medium tracking-widest uppercase mb-3">Career</p>
-          <h2 className="text-5xl font-bold text-white">Experience</h2>
-          <div className="mt-4 h-px w-16 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto" />
-        </motion.div>
+          From <em className="text-blue-400">signals</em> to systems —<br />
+          a record of the work.
+        </motion.h2>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/50 via-indigo-500/30 to-transparent" />
+        {/* ── Experience entries ── */}
+        <div className="space-y-0">
+          {experiences.map((exp, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -16 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.12 }}
+              className="border border-white/[0.06] border-b-0 last:border-b"
+            >
+              {/* Current role accent */}
+              {exp.current && (
+                <div className="h-[2px] w-full bg-blue-500/50" />
+              )}
 
-          <div className="space-y-10 pl-8 md:pl-24">
-            {experiences.map((exp, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}
-                className="relative"
-              >
-                {/* Timeline dot */}
-                <div className={`absolute -left-8 md:-left-24 top-6 w-4 h-4 rounded-full border-2 flex items-center justify-center
-                  ${exp.current ? 'border-blue-400 bg-blue-400/20' : 'border-gray-600 bg-gray-800'}`}>
+              <div className="p-8 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+                {/* ── Left: meta column ── */}
+                <div className="lg:col-span-3 space-y-3">
+                  <div className="font-mono text-[9px] tracking-widest uppercase text-gray-700">
+                    {exp.index}
+                  </div>
+                  <div className="font-mono text-xs text-gray-500">{exp.period}</div>
+                  <div className="font-mono text-[9px] uppercase tracking-wide text-gray-700">{exp.type}</div>
+
                   {exp.current && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+                    <div className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-widest text-green-400">
+                      <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                      Current
+                    </div>
                   )}
                 </div>
 
-                {/* Card */}
-                <div className={`p-7 rounded-2xl border transition-all duration-300
-                  ${exp.current
-                    ? 'bg-blue-950/20 border-blue-500/20 hover:border-blue-500/40'
-                    : 'bg-white/[0.025] border-white/[0.06] hover:border-white/15'
-                  }`}>
-                  {/* Top row */}
-                  <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-                    <div>
-                      <div className="flex items-center gap-3 mb-1 flex-wrap">
-                        <h3 className="text-white font-semibold text-xl">{exp.title}</h3>
-                        {exp.current && (
-                          <span className="text-xs px-2.5 py-0.5 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">
-                            Current
-                          </span>
-                        )}
-                      </div>
-                      <p className="text-blue-400 font-medium">{exp.company}</p>
-                    </div>
-                    <div className="text-right flex-shrink-0">
-                      <span className="text-sm text-gray-400">{exp.period}</span>
-                      <br />
-                      <span className="text-xs text-gray-600">{exp.type}</span>
-                    </div>
+                {/* ── Right: content ── */}
+                <div className="lg:col-span-9">
+                  <div className="mb-5 border-b border-white/[0.06] pb-5">
+                    <h3
+                      className="text-white mb-1"
+                      style={{
+                        fontFamily: "'Playfair Display', Georgia, serif",
+                        fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)',
+                        fontStyle: 'italic',
+                        letterSpacing: '-0.01em',
+                      }}
+                    >
+                      {exp.title}
+                    </h3>
+                    <p className="font-mono text-xs text-blue-400/80">{exp.company}</p>
                   </div>
 
-                  <p className="text-gray-400 text-sm leading-relaxed mb-5">{exp.description}</p>
+                  <p className="text-gray-400 text-sm leading-relaxed mb-6">{exp.description}</p>
 
-                  {/* Achievements */}
-                  {exp.achievements.length > 0 && (
-                    <ul className="space-y-2 mb-5">
-                      {exp.achievements.map((a, j) => (
-                        <li key={j} className="flex items-start gap-2.5 text-sm text-gray-400">
-                          <span className="mt-1.5 w-1 h-1 rounded-full bg-blue-400/60 flex-shrink-0" />
-                          {a}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                  {/* Achievements — numbered editorial list */}
+                  <ul className="space-y-2.5 mb-6">
+                    {exp.achievements.map((a, j) => (
+                      <li key={j} className="flex items-start gap-4 text-sm text-gray-400">
+                        <span className="font-mono text-[9px] text-gray-700 mt-1 flex-shrink-0">
+                          {String(j + 1).padStart(2, '0')}
+                        </span>
+                        {a}
+                      </li>
+                    ))}
+                  </ul>
 
-                  {/* Skill tags */}
+                  {/* Skill tags — mono index */}
                   <div className="flex flex-wrap gap-2">
-                    {exp.skills.map((s, j) => (
-                      <span key={j} className="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400 border border-white/[0.06]">
+                    {exp.skills.map((s) => (
+                      <span
+                        key={s}
+                        className="font-mono text-[9px] uppercase tracking-widest px-3 py-1.5 border border-white/[0.06] text-gray-600"
+                      >
                         {s}
                       </span>
                     ))}
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
