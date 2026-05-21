@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=JetBrains+Mono:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,17 +14,13 @@
 /* ─── Light Mode Variables ──────────────────────────── */
 html.light-mode {
   --foreground-rgb: 15, 23, 42;
-  --background: #f8fafc;
+  --background: #f5f3ee;
 }
 
 /* ─── Base ──────────────────────────────────────────── */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -73,43 +71,191 @@ body {
   color: #fff;
 }
 
-/* ─── Light Mode Overrides ──────────────────────────── */
+/* ══════════════════════════════════════════════════════
+   LIGHT MODE — complete editorial overrides
+   Background: warm parchment #f5f3ee (matches open-design energy)
+   Ink: near-black #0f172a for headlines, slate for body
+   ══════════════════════════════════════════════════════ */
+
 html.light-mode body {
-  background-color: #f8fafc;
+  background-color: #f5f3ee;
   color: #0f172a;
 }
 
 html.light-mode .gradient-bg {
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(99, 102, 241, 0.06) 0%, transparent 50%);
+    radial-gradient(ellipse at 20% 50%, rgba(59, 130, 246, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(99, 102, 241, 0.03) 0%, transparent 50%);
 }
 
+/* ── Scrollbar ── */
+html.light-mode ::-webkit-scrollbar-track { background: #f5f3ee; }
+html.light-mode ::-webkit-scrollbar-thumb { background: rgba(59, 130, 246, 0.35); }
+
+/* ── Selection ── */
+html.light-mode ::selection {
+  background: rgba(59, 130, 246, 0.15);
+  color: #0f172a;
+}
+
+/* ── Header ── */
 html.light-mode header {
-  background-color: rgba(248, 250, 252, 0.85) !important;
+  background-color: rgba(245, 243, 238, 0.92) !important;
   border-bottom-color: rgba(0, 0, 0, 0.08) !important;
 }
 
-/* Text */
-html.light-mode .text-white    { color: #0f172a !important; }
+/* ─────────────────────────────────────────────────────
+   SECTION BACKGROUNDS
+   All hardcoded dark bg-[#030712] → parchment
+   ───────────────────────────────────────────────────── */
+html.light-mode .bg-\[\#030712\] {
+  background-color: #f5f3ee !important;
+}
+html.light-mode section {
+  background-color: #f5f3ee !important;
+}
+
+/* ─────────────────────────────────────────────────────
+   BORDERS
+   white/opacity borders → visible ink borders
+   ───────────────────────────────────────────────────── */
+html.light-mode .border-white\/\[0\.06\]  { border-color: rgba(0, 0, 0, 0.10) !important; }
+html.light-mode .border-white\/\[0\.07\]  { border-color: rgba(0, 0, 0, 0.10) !important; }
+html.light-mode .border-white\/\[0\.08\]  { border-color: rgba(0, 0, 0, 0.12) !important; }
+html.light-mode .border-white\/\[0\.05\]  { border-color: rgba(0, 0, 0, 0.08) !important; }
+html.light-mode .border-white\/10         { border-color: rgba(0, 0, 0, 0.10) !important; }
+html.light-mode .border-white\/\[0\.04\]  { border-color: rgba(0, 0, 0, 0.06) !important; }
+html.light-mode .border-white\/15         { border-color: rgba(0, 0, 0, 0.15) !important; }
+html.light-mode .border-white\/25         { border-color: rgba(0, 0, 0, 0.22) !important; }
+html.light-mode .border-white\/30         { border-color: rgba(0, 0, 0, 0.25) !important; }
+
+/* divide utilities */
+html.light-mode .divide-white\/\[0\.06\] > * + * { border-color: rgba(0, 0, 0, 0.10) !important; }
+
+/* ─────────────────────────────────────────────────────
+   TEXT COLORS
+   Map every gray/white shade to ink equivalent
+   ───────────────────────────────────────────────────── */
+
+/* Headlines */
+html.light-mode .text-white { color: #0f172a !important; }
+
+/* Body text */
 html.light-mode .text-gray-300 { color: #334155 !important; }
 html.light-mode .text-gray-400 { color: #475569 !important; }
+
+/* Muted / meta */
 html.light-mode .text-gray-500 { color: #64748b !important; }
-html.light-mode .text-gray-600 { color: #475569 !important; }
+html.light-mode .text-gray-600 { color: #6b7280 !important; }
 
-/* Backgrounds */
-html.light-mode .bg-\[\#030712\]       { background-color: #f8fafc !important; }
-html.light-mode .bg-gray-900           { background-color: #f1f5f9 !important; }
-html.light-mode .bg-gray-800           { background-color: #e2e8f0 !important; }
-html.light-mode .bg-white\/\[0\.025\]  { background-color: rgba(255,255,255,0.8) !important; }
-html.light-mode .bg-white\/\[0\.02\]   { background-color: rgba(255,255,255,0.7) !important; }
-html.light-mode .bg-white\/\[0\.03\]   { background-color: rgba(255,255,255,0.9) !important; }
+/* Very faint labels — keep readable but subtle */
+html.light-mode .text-gray-700 { color: #9ca3af !important; }
 
-/* Borders */
-html.light-mode .border-white\/\[0\.06\] { border-color: rgba(0,0,0,0.08) !important; }
-html.light-mode .border-white\/\[0\.05\] { border-color: rgba(0,0,0,0.06) !important; }
-html.light-mode .border-white\/10        { border-color: rgba(0,0,0,0.1)  !important; }
+/* ─────────────────────────────────────────────────────
+   CARD / SURFACE BACKGROUNDS
+   All translucent white surfaces → warm white
+   ───────────────────────────────────────────────────── */
+html.light-mode .bg-white\/\[0\.025\]  { background-color: rgba(255, 255, 255, 0.85) !important; }
+html.light-mode .bg-white\/\[0\.02\]   { background-color: rgba(255, 255, 255, 0.75) !important; }
+html.light-mode .bg-white\/\[0\.03\]   { background-color: rgba(255, 255, 255, 0.90) !important; }
+html.light-mode .bg-white\/\[0\.04\]   { background-color: rgba(255, 255, 255, 0.95) !important; }
+html.light-mode .bg-white\/\[0\.015\]  { background-color: rgba(255, 255, 255, 0.70) !important; }
 
-/* Scrollbar */
-html.light-mode ::-webkit-scrollbar-track { background: #f1f5f9; }
-html.light-mode ::-webkit-scrollbar-thumb { background: rgba(59, 130, 246, 0.4); }
+/* Old dark card bg */
+html.light-mode .bg-\[\#0f1629\]  { background-color: #ffffff !important; }
+html.light-mode .bg-gray-900      { background-color: #f1f5f9 !important; }
+html.light-mode .bg-gray-800      { background-color: #e2e8f0 !important; }
+
+/* ─────────────────────────────────────────────────────
+   BLUE ACCENT — keep but slightly richer in light
+   ───────────────────────────────────────────────────── */
+html.light-mode .text-blue-400 { color: #2563eb !important; }
+html.light-mode .text-blue-500 { color: #1d4ed8 !important; }
+
+html.light-mode .border-blue-500\/20  { border-color: rgba(37, 99, 235, 0.2) !important; }
+html.light-mode .border-blue-500\/30  { border-color: rgba(37, 99, 235, 0.3) !important; }
+html.light-mode .border-blue-500\/50  { border-color: rgba(37, 99, 235, 0.5) !important; }
+
+html.light-mode .bg-blue-500\/5   { background-color: rgba(37, 99, 235, 0.05) !important; }
+html.light-mode .bg-blue-500\/8   { background-color: rgba(37, 99, 235, 0.06) !important; }
+html.light-mode .bg-blue-500\/10  { background-color: rgba(37, 99, 235, 0.08) !important; }
+html.light-mode .bg-blue-950\/20  { background-color: rgba(37, 99, 235, 0.04) !important; }
+
+/* ─────────────────────────────────────────────────────
+   VIOLET / INDIGO / CYAN / AMBER — project accents
+   ───────────────────────────────────────────────────── */
+html.light-mode .text-violet-400  { color: #7c3aed !important; }
+html.light-mode .text-indigo-400  { color: #4338ca !important; }
+html.light-mode .text-cyan-400    { color: #0891b2 !important; }
+html.light-mode .text-amber-400   { color: #d97706 !important; }
+html.light-mode .text-green-400   { color: #16a34a !important; }
+html.light-mode .text-purple-400  { color: #7c3aed !important; }
+
+/* ─────────────────────────────────────────────────────
+   CTA BUTTONS — editorial style
+   "Commission Work" white button → dark ink in light mode
+   ───────────────────────────────────────────────────── */
+html.light-mode .bg-white.text-black {
+  background-color: #0f172a !important;
+  color: #f5f3ee !important;
+}
+html.light-mode .bg-white.text-black:hover {
+  background-color: #1e293b !important;
+}
+
+/* ─────────────────────────────────────────────────────
+   HERO SECTION SPECIFIC
+   The hero has hardcoded bg-[#030712] inline
+   ───────────────────────────────────────────────────── */
+html.light-mode section.bg-\[\#030712\] {
+  background-color: #f5f3ee !important;
+}
+
+/* Noise grain — invisible in light mode, that's fine */
+html.light-mode [aria-hidden="true"][style*="fractalNoise"] {
+  opacity: 0.01 !important;
+}
+
+/* ─────────────────────────────────────────────────────
+   GLASS CARD — light mode
+   ───────────────────────────────────────────────────── */
+html.light-mode .glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+/* ─────────────────────────────────────────────────────
+   GRID PATTERN — invert for light
+   ───────────────────────────────────────────────────── */
+html.light-mode .bg-grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.04) 1px, transparent 1px);
+}
+
+/* ─────────────────────────────────────────────────────
+   DEPLOYMENT PROCESS — still old design, needs bg fix
+   ───────────────────────────────────────────────────── */
+html.light-mode .bg-gray-900\/50     { background-color: rgba(241, 245, 249, 0.8) !important; }
+html.light-mode .bg-\[\#0a0f1e\]    { background-color: #f5f3ee !important; }
+html.light-mode .bg-\[\#0d1117\]    { background-color: #f5f3ee !important; }
+
+/* Pipeline step cards in DeploymentProcess */
+html.light-mode [class*="rounded-2xl"][class*="border"] {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* ─────────────────────────────────────────────────────
+   CONTACT FORM — old design, fix inputs
+   ───────────────────────────────────────────────────── */
+html.light-mode input,
+html.light-mode textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+html.light-mode input::placeholder,
+html.light-mode textarea::placeholder {
+  color: #94a3b8 !important;
+}
