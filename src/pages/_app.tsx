@@ -1,26 +1,25 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
-import Script from 'next/script'
-import { Playfair_Display, JetBrains_Mono } from 'next/font/google'
+import '@/styles/globals.css';
+import type { AppProps } from 'next/app';
+import Script from 'next/script';
+import { Poppins, Roboto_Mono } from 'next/font/google';
 
-const playfair = Playfair_Display({
+const poppins = Poppins({
   subsets: ['latin'],
-  style: ['normal', 'italic'],
-  weight: ['400', '700'],
-  variable: '--font-playfair',
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-poppins',
   display: 'swap',
-})
+});
 
-const jetbrains = JetBrains_Mono({
+const robotoMono = Roboto_Mono({
   subsets: ['latin'],
-  weight: ['400', '500'],
-  variable: '--font-jetbrains',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-roboto-mono',
   display: 'swap',
-})
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={`${playfair.variable} ${jetbrains.variable}`}>
+    <div className={`${poppins.variable} ${robotoMono.variable} font-sans`}>
       {/* Google Analytics */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-YDPDLECYYZ"
@@ -37,5 +36,5 @@ export default function App({ Component, pageProps }: AppProps) {
 
       <Component {...pageProps} />
     </div>
-  )
+  );
 }
