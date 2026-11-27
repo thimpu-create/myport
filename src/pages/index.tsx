@@ -1,11 +1,9 @@
 import Head from 'next/head';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Skills from '@/components/Skills';
+import Expertise from '@/components/Expertise';
+import Work from '@/components/Work';
 import Experience from '@/components/Experience';
-import Projects from '@/components/Projects';
-import DeploymentProcess from '@/components/DeploymentProcess';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import TerminalEasterEgg from '@/components/TerminalEasterEgg';
@@ -13,23 +11,28 @@ import TerminalEasterEgg from '@/components/TerminalEasterEgg';
 export default function Home() {
   return (
     <div className="min-h-screen relative">
-      <div className="gradient-bg" />
       <Head>
-        <title>Thimpu Sengyung — Software Engineer & DevOps</title>
+        <title>Thimpu Sengyung — Software Engineer, DevOps &amp; AI-Native Builder</title>
         <meta
           name="description"
-          content="Portfolio of Thimpu Sengyung — Software Engineer, Full Stack Developer & DevOps Engineer. Building scalable systems, cloud infrastructure, and AI-powered products."
+          content="Portfolio of Thimpu Sengyung — Software Engineer, Technical Officer at Jal Jeevan Mission (JJM) Assam, and AI-Native Builder behind JJM Brain HRMS, JJM Brain (RAG + MCP), and OnlineCRM."
         />
         <meta name="robots" content="index, follow" />
 
-        <meta property="og:title" content="Thimpu Sengyung — Software Engineer & DevOps" />
-        <meta property="og:description" content="Building scalable systems, cloud infrastructure, and AI-powered products." />
+        <meta property="og:title" content="Thimpu Sengyung — Software Engineer, DevOps & AI-Native Builder" />
+        <meta
+          property="og:description"
+          content="Building government-compliant HRMS infrastructure (JJM Assam), AI-native RAG/MCP systems, and full-stack cloud platforms."
+        />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/og-image.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Thimpu Sengyung — Software Engineer & DevOps" />
-        <meta name="twitter:description" content="Building scalable systems, cloud infrastructure, and AI-powered products." />
+        <meta name="twitter:title" content="Thimpu Sengyung — Software Engineer, DevOps & AI-Native Builder" />
+        <meta
+          name="twitter:description"
+          content="Government-compliant HRMS (JJM Assam), AI-native engineering, and scalable full-stack systems."
+        />
         <meta name="twitter:image" content="/og-image.png" />
 
         <link rel="icon" href="/favicon.ico" />
@@ -39,14 +42,14 @@ export default function Home() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Thimpu Sengyung",
-              "jobTitle": "Software Engineer & DevOps Engineer",
-              "url": "https://developerthimpu.online",
-              "sameAs": [
-                "https://github.com/thimpu-create",
-                "https://linkedin.com/in/thimpu-sengyung-a00614260",
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Thimpu Sengyung',
+              jobTitle: 'Software Engineer & Technical Officer',
+              url: 'https://developerthimpu.online',
+              sameAs: [
+                'https://github.com/thimpu-create',
+                'https://linkedin.com/in/thimpu-sengyung-a00614260',
               ],
             }),
           }}
@@ -55,18 +58,16 @@ export default function Home() {
 
       <Header />
 
-      <main className="relative z-10">
+      <main>
         <Hero />
-        <About />
-        <Skills />
-        <Projects />
+        <Expertise />
+        <Work />
         <Experience />
-        <DeploymentProcess />
         <Contact />
-        <TerminalEasterEgg />
       </main>
 
       <Footer />
+      <TerminalEasterEgg />
     </div>
   );
 }

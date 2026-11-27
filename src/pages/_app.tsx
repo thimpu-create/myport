@@ -1,26 +1,34 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
-import Script from 'next/script'
-import { Playfair_Display, JetBrains_Mono } from 'next/font/google'
+import '@/styles/globals.css';
+import type { AppProps } from 'next/app';
+import Script from 'next/script';
+import localFont from 'next/font/local';
 
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  style: ['normal', 'italic'],
-  weight: ['400', '700'],
-  variable: '--font-playfair',
+const poppins = localFont({
+  src: [
+    { path: '../fonts/poppins-latin-400-normal.woff2', weight: '400', style: 'normal' },
+    { path: '../fonts/poppins-latin-500-normal.woff2', weight: '500', style: 'normal' },
+    { path: '../fonts/poppins-latin-600-normal.woff2', weight: '600', style: 'normal' },
+    { path: '../fonts/poppins-latin-700-normal.woff2', weight: '700', style: 'normal' },
+    { path: '../fonts/poppins-latin-800-normal.woff2', weight: '800', style: 'normal' },
+  ],
+  variable: '--font-poppins',
   display: 'swap',
-})
+});
 
-const jetbrains = JetBrains_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500'],
-  variable: '--font-jetbrains',
+const robotoMono = localFont({
+  src: [
+    { path: '../fonts/roboto-mono-latin-400-normal.woff2', weight: '400', style: 'normal' },
+    { path: '../fonts/roboto-mono-latin-500-normal.woff2', weight: '500', style: 'normal' },
+    { path: '../fonts/roboto-mono-latin-600-normal.woff2', weight: '600', style: 'normal' },
+    { path: '../fonts/roboto-mono-latin-700-normal.woff2', weight: '700', style: 'normal' },
+  ],
+  variable: '--font-roboto-mono',
   display: 'swap',
-})
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={`${playfair.variable} ${jetbrains.variable}`}>
+    <div className={`${poppins.variable} ${robotoMono.variable} font-sans`}>
       {/* Google Analytics */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-YDPDLECYYZ"
@@ -37,5 +45,5 @@ export default function App({ Component, pageProps }: AppProps) {
 
       <Component {...pageProps} />
     </div>
-  )
+  );
 }
